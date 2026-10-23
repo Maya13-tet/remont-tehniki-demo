@@ -157,3 +157,5 @@ footer{background:var(--pcb-d);color:#A9C2B8;padding:1.6rem 0 2rem;font-size:.9r
 .btn--ghost:hover{background:var(--pcb);color:var(--silk)}
 .cont dd .sm{font:400 .95rem var(--body);color:var(--mute)}
 @media(max-width:820px){.quick{justify-content:center}}
+
+.map iframe{display:block;width:100%;height:clamp(18rem,40vw,26rem);border:0;border-radius:.6rem;box-shadow:0 0 0 2px var(--solder);background:var(--tint)}
