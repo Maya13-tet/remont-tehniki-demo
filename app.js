@@ -12,24 +12,23 @@ var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').mat
 
 /* ---------- образец прайса (показывается, пока нет таблицы) ---------- */
 var SAMPLE=[
-  {cat:'Электроинструмент',name:'Замена кнопки пуска (дрель, шуруповёрт)',price:600,from:true},
-  {cat:'Электроинструмент',name:'Замена угольных щёток',price:400,from:true},
-  {cat:'Электроинструмент',name:'Замена сетевого шнура',price:350,from:true},
-  {cat:'Электроинструмент',name:'Ремонт или замена патрона',price:500,from:true},
-  {cat:'Электроинструмент',name:'Замена подшипников',price:700,from:true},
-  {cat:'Электроинструмент',name:'Ремонт редуктора болгарки',price:900,from:true},
-  {cat:'Кухонная техника',name:'Замена ножа или привода (блендер, миксер)',price:500,from:true},
-  {cat:'Кухонная техника',name:'Ремонт электродвигателя',price:800,from:true},
-  {cat:'Кухонная техника',name:'Замена шестерён мясорубки',price:700,from:true},
-  {cat:'Чайники и кофеварки',name:'Замена нагревательного элемента',price:700,from:true},
-  {cat:'Чайники и кофеварки',name:'Замена шнура или базы чайника',price:400,from:true},
-  {cat:'Чайники и кофеварки',name:'Чистка кофеварки от накипи',price:500,from:true},
-  {cat:'Пылесосы',name:'Замена сетевого шнура и смотчика',price:600,from:true},
-  {cat:'Пылесосы',name:'Замена двигателя',price:1500,from:true},
-  {cat:'Пылесосы',name:'Чистка и замена фильтров',price:400,from:true},
-  {cat:'Утюги и фены',name:'Замена термостата утюга',price:600,from:true},
-  {cat:'Утюги и фены',name:'Замена шнура фена',price:350,from:true},
-  {cat:'Утюги и фены',name:'Ремонт нагревателя фена',price:500,from:true}
+  {cat:'Микроволновые печи',name:'Замена магнетрона',price:2500},
+  {cat:'Микроволновые печи',name:'Замена диода или конденсатора',price:1200},
+  {cat:'Микроволновые печи',name:'Ремонт платы управления',price:2000,from:true},
+  {cat:'Пылесосы',name:'Замена двигателя',price:2500,from:true},
+  {cat:'Пылесосы',name:'Замена шнура или смотчика',price:900},
+  {cat:'Пылесосы',name:'Чистка, замена фильтров',price:700},
+  {cat:'Кофемашины и кофеварки',name:'Декальцинация (чистка от накипи)',price:1000},
+  {cat:'Кофемашины и кофеварки',name:'Замена помпы',price:2200},
+  {cat:'Кофемашины и кофеварки',name:'Замена термоблока',price:3000},
+  {cat:'Электроинструмент',name:'Замена щёток',price:600},
+  {cat:'Электроинструмент',name:'Замена кнопки или выключателя',price:800},
+  {cat:'Электроинструмент',name:'Замена сетевого шнура',price:700},
+  {cat:'Электроинструмент',name:'Замена подшипников',price:1200},
+  {cat:'Электроинструмент',name:'Замена якоря или статора',price:1800,from:true},
+  {cat:'Мелкая бытовая техника',name:'Замена шнура',price:500},
+  {cat:'Мелкая бытовая техника',name:'Замена нагревательного элемента',price:1000},
+  {cat:'Мелкая бытовая техника',name:'Замена кнопки',price:600}
 ];
 
 /* иконки и описания категорий (новые категории из таблицы получают значок по умолчанию) */
@@ -39,18 +38,19 @@ var ICO={
   kettle:'<path d="M10 19h22l-2 17H12z"/><path d="M32 23h4a3.5 3.5 0 010 9h-3"/><path d="M14 19c0-6 3-8 7-8s7 2 7 8"/><path d="M21 7v4"/>',
   vac:'<circle cx="15" cy="31" r="6"/><circle cx="33" cy="33" r="4"/><path d="M15 25V12h7M22 12l13 21"/>',
   iron:'<path d="M5 33h33c0-9-6-16-15-16H15c-5 0-10 5-10 16z"/><path d="M5 38h33"/><path d="M15 17v-5h11"/>',
+  micro:'<rect x="5" y="11" width="34" height="22" rx="3"/><rect x="9" y="15" width="18" height="14" rx="1.5"/><path d="M32 22h3M32 26h3M32 30h3"/>',
   gear:'<circle cx="22" cy="22" r="6"/><path d="M22 6v6M22 32v6M6 22h6M32 22h6M11 11l4 4M29 29l4 4M33 11l-4 4M15 29l-4 4"/>'
 };
 var META={
+  'Микроволновые печи':{i:'micro',t:'Не греет, искрит, не включается, не крутится тарелка.'},
+  'Пылесосы':{i:'vac',t:'Бытовые и ручные пылесосы: мотор, шнур, фильтры.'},
+  'Кофемашины и кофеварки':{i:'kettle',t:'Чистка от накипи, помпа, термоблок.'},
   'Электроинструмент':{i:'tool',t:'Дрели, шуруповёрты, болгарки, перфораторы.'},
-  'Кухонная техника':{i:'mix',t:'Блендеры, миксеры, мясорубки, измельчители.'},
-  'Чайники и кофеварки':{i:'kettle',t:'Электрочайники, кофеварки, термопоты.'},
-  'Пылесосы':{i:'vac',t:'Бытовые и ручные пылесосы.'},
-  'Утюги и фены':{i:'iron',t:'Утюги, отпариватели, фены.'}
+  'Мелкая бытовая техника':{i:'iron',t:'Чайники, утюги, блендеры, фены.'}
 };
 function meta(c){return META[c]||{i:'gear',t:'Цены на ремонт смотрите в прайсе.'}}
 
-var items=SAMPLE,cats=[],cur=0,live=false;
+var items=SAMPLE,cats=[],cur=0,live=false,stale=false;
 
 function fmt(it){return (it.from?'от ':'')+Number(it.price).toLocaleString('ru-RU')+' ₽'}
 function buildCats(){
@@ -83,7 +83,7 @@ function renderPrice(){
   });
   var ul=$('#price');ul.innerHTML='';
   var list=items.filter(function(it){return it.cat===cats[cur]});
-  if(!list.length){ul.innerHTML='<li class="empty">В этой категории пока нет позиций.</li>';return}
+  if(!list.length){ul.innerHTML='<li class="empty">Цены сейчас недоступны. <a href="tel:+78430000000">Уточните стоимость по телефону</a>.</li>';$('#srcnote').textContent='';return}
   list.forEach(function(it){
     var li=document.createElement('li');li.className='row';
     li.innerHTML='<span class="nm"></span><i class="dots"></i><b></b>';
@@ -93,7 +93,7 @@ function renderPrice(){
   });
   var n=$('#srcnote');
   n.className='srcnote'+(live?' live':'');
-  n.textContent=live?'Цены загружены из таблицы мастерской.':'Образец прайса для демонстрации. В рабочей версии цены подтягиваются из вашей Google Таблицы.';
+  n.textContent=live?'Цены загружены из таблицы сервиса.':stale?'Показаны последние сохранённые цены, обновить не удалось.':'Образец прайса для демонстрации. В рабочей версии цены подтягиваются из вашей Google Таблицы.';
 }
 
 function renderDevice(){
@@ -108,9 +108,17 @@ applyData();
 
 /* цены из таблицы */
 if(CONFIG.PRICES_URL){
+  var KEY='eltech-prices';
   fetch(CONFIG.PRICES_URL).then(function(r){return r.json()}).then(function(d){
-    if(d&&d.items&&d.items.length){items=d.items;live=true;applyData()}
-  }).catch(function(){/* остаётся образец */});
+    if(d&&d.items&&d.items.length){
+      items=d.items;live=true;applyData();
+      try{localStorage.setItem(KEY,JSON.stringify(d.items))}catch(e){}
+    }else throw new Error('empty');
+  }).catch(function(){
+    try{var c=JSON.parse(localStorage.getItem(KEY)||'null');if(c&&c.length){items=c;stale=true}}catch(e){}
+    if(!stale)items=[];
+    applyData();
+  });
 }
 
 /* ---------- бирка в первом экране ---------- */
@@ -145,6 +153,17 @@ else{
 }
 
 /* ---------- форма ---------- */
+$('#fp').addEventListener('input',function(){
+  var d=this.value.replace(/\D/g,'');
+  if(d[0]==='8'||d[0]==='7')d=d.slice(1);
+  d=d.slice(0,10);
+  var o='+7';
+  if(d.length)o+=' ('+d.slice(0,3);
+  if(d.length>=3)o+=') '+d.slice(3,6);
+  if(d.length>=6)o+='-'+d.slice(6,8);
+  if(d.length>=8)o+='-'+d.slice(8,10);
+  this.value=d.length?o:'';
+});
 var f=$('#form'),err=$('#err');
 function showErr(msg,node){err.textContent=msg;err.hidden=false;if(node)node.focus()}
 function thanks(title,text){
@@ -159,10 +178,10 @@ f.addEventListener('submit',function(e){
   var name=$('#fn').value.trim(),ph=$('#fp').value.replace(/\D/g,'');
   if($('#fh').value)return; /* ловушка для ботов */
   if(name.length<2)return showErr('Напишите, как к вам обращаться.',$('#fn'));
-  if(ph.length<10)return showErr('Телефон неполный: нужно не меньше десяти цифр.',$('#fp'));
+  if(ph.length<11)return showErr('Телефон неполный: нужно 10 цифр после +7.',$('#fp'));
   if(!$('#fc').checked)return showErr('Поставьте галочку согласия на обработку данных.',$('#fc'));
   err.hidden=true;
-  var data={name:name,phone:$('#fp').value.trim(),device:$('#fd').value,issue:$('#fi').value.trim()};
+  var data={name:name,phone:$('#fp').value.trim(),device:$('#fd').value,model:$('#fm').value.trim(),issue:$('#fi').value.trim()};
   if(!CONFIG.FORM_URL){
     thanks('Спасибо, '+name+'!','Это демо-версия, заявка никуда не отправлена. В рабочем сайте она появится новой строкой в вашей таблице, а мастеру придёт сообщение в Telegram.');
     return;
@@ -176,7 +195,7 @@ f.addEventListener('submit',function(e){
     })
     .catch(function(){
       btn.disabled=false;btn.textContent='Отправить заявку';
-      showErr('Не получилось отправить. Позвоните нам по телефону из раздела «Где нас найти».');
+      showErr('Не получилось отправить. Позвоните нам: +7 (843) 000-00-00.');
     });
 });
 })();
