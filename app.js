@@ -93,7 +93,7 @@ function renderPrice(){
   });
   var n=$('#srcnote');
   n.className='srcnote'+(live?' live':'');
-  n.textContent=live?'Цены загружены из таблицы сервиса.':stale?'Показаны последние сохранённые цены, обновить не удалось.':'Образец прайса для демонстрации. В рабочей версии цены подтягиваются из вашей Google Таблицы.';
+  n.textContent=stale?'Показаны последние сохранённые цены, обновить не удалось.':'';
 }
 
 function renderDevice(){
@@ -183,7 +183,7 @@ f.addEventListener('submit',function(e){
   err.hidden=true;
   var data={name:name,phone:$('#fp').value.trim(),device:$('#fd').value,model:$('#fm').value.trim(),issue:$('#fi').value.trim()};
   if(!CONFIG.FORM_URL){
-    thanks('Спасибо, '+name+'!','Это демо-версия, заявка никуда не отправлена. В рабочем сайте она появится новой строкой в вашей таблице, а мастеру придёт сообщение в Telegram.');
+    thanks('Спасибо, '+name+'!','Заявка принята. Мы перезвоним в рабочее время.');
     return;
   }
   var btn=$('#send');btn.disabled=true;btn.textContent='Отправляем...';
