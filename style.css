@@ -71,6 +71,14 @@ h3{font-size:1.3rem}
 .tag__stamp{position:absolute;right:.9rem;bottom:.8rem;font:700 1.25rem var(--head);color:#2B7A4B;border:3px solid #2B7A4B;border-radius:.35rem;padding:.1rem .6rem;transform:rotate(-12deg) scale(1.6);opacity:0;transition:transform .35s cubic-bezier(.3,1.6,.5,1),opacity .2s}
 .tag__stamp.on{transform:rotate(-12deg) scale(1);opacity:.9}
 .hero + .sec{padding-top:clamp(5.5rem,10vw,7.5rem)}
+/* на широком экране бирка стоит справа и целиком видна на первом экране */
+@media(min-width:1000px){
+  .hero{padding-bottom:3.5rem}
+  .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;column-gap:3rem;align-items:center}
+  .hero .wrap>*{grid-column:1}
+  .hero .wrap>.tag{grid-column:2;grid-row:1/span 4;margin:3.5rem auto 0;transform:rotate(-2.5deg)}
+  .hero + .sec{padding-top:clamp(4rem,7vw,5.5rem)}
+}
 
 /* услуги */
 .serv{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:1.1rem;margin-top:2.4rem}
