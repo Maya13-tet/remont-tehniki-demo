@@ -3,8 +3,8 @@
 
 /* ---------- настройки: после подключения таблицы вставить два адреса ---------- */
 var CONFIG={
-  PRICES_URL:'',   /* адрес веб-приложения Google Apps Script (чтение цен) */
-  FORM_URL:''      /* тот же адрес (приём заявок) */
+  PRICES_URL:'https://script.google.com/macros/s/AKfycbzPL645VTvu4WzKExhfsCPlRIPitsYMSytRJrSUAB-EolwVL4SgYke93omrKtPmDXeVkw/exec',   /* адрес веб-приложения Google Apps Script (чтение цен) */
+  FORM_URL:'https://script.google.com/macros/s/AKfycbzPL645VTvu4WzKExhfsCPlRIPitsYMSytRJrSUAB-EolwVL4SgYke93omrKtPmDXeVkw/exec'      /* тот же адрес (приём заявок) */
 };
 
 var $=function(s){return document.querySelector(s)};
