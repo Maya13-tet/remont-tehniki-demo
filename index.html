@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мастерская «Контакт» – ремонт малой техники и электроинструмента</title>
+<meta name="description" content="Мастерская «Контакт»: ремонт дрелей, шуруповёртов, пылесосов, чайников и другой малой бытовой техники. Прайс, адрес на карте, заявка онлайн. Демо-версия для заказчика.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="head">
+  <div class="demo" role="note">
+    <span class="demo__dot" aria-hidden="true"></span>
+    <p><b>Демо-версия для заказчика saigai.</b> Показываем, как будет выглядеть и работать ваш сайт. Название, адрес, телефон и цены условные.</p>
+  </div>
+  <header class="top">
+    <div class="wrap">
+      <a class="logo" href="#top" aria-label="Мастерская «Контакт», наверх">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#D4802F"/><path d="M18 5l-8 13h6l-2 9 8-13h-6z" fill="#10201B"/></svg>
+        <span>Контакт</span>
+      </a>
+      <nav class="nav" aria-label="Разделы">
+        <a href="#uslugi">Услуги</a>
+        <a href="#prajs">Прайс</a>
+        <a href="#kak">Как мы работаем</a>
+        <a href="#kontakty">Контакты</a>
+      </nav>
+      <a class="btn btn--sm" href="#zayavka">Оставить заявку</a>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Починим технику, которую жалко выбросить</h1>
+    <p class="lead">Мастерская по ремонту малой бытовой техники и электроинструмента. Принесите дрель, чайник или пылесос к нам, всё остальное возьмём на себя.</p>
+    <div class="acts">
+      <a class="btn" href="#zayavka">Оставить заявку</a>
+      <a class="btn btn--line" href="#prajs">Смотреть прайс</a>
+    </div>
+
+    <figure class="tag" aria-label="Пример приёмной бирки">
+      <svg class="tag__string" viewBox="0 0 120 70" aria-hidden="true"><path d="M60 62C56 40 30 30 6 6M60 62C64 40 90 30 114 6" fill="none" stroke="#D9DED6" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <div class="tag__card">
+        <span class="tag__hole" aria-hidden="true"></span>
+        <p class="tag__title">Приёмная бирка</p>
+        <dl class="tag__rows">
+          <div><dt>Принесли</dt><dd><span id="tgItem">Дрель</span><i class="caret" aria-hidden="true"></i></dd></div>
+          <div><dt>Что не так</dt><dd><span id="tgIssue">не включается</span></dd></div>
+          <div><dt>Цена</dt><dd><span id="tgPrice">по прайсу</span></dd></div>
+        </dl>
+        <span class="tag__stamp" id="tgStamp" aria-hidden="true">Чиним</span>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section id="uslugi" class="sec">
+  <div class="wrap">
+    <h2>Что мы чиним</h2>
+    <p class="lead">Нажмите на нужную технику, и мы покажем цены на её ремонт.</p>
+    <ul class="serv" id="serv"></ul>
+  </div>
+</section>
+
+<section id="prajs" class="sec sec--tint">
+  <div class="wrap">
+    <h2>Прайс</h2>
+    <p class="lead">Цены обновляются сами: мастерская меняет их в своей таблице, а на сайте они появляются без программиста.</p>
+    <div class="tabs" id="tabs" role="tablist" aria-label="Виды техники"></div>
+    <ul class="price" id="price" aria-live="polite"></ul>
+    <p class="srcnote" id="srcnote"></p>
+  </div>
+</section>
+
+<section id="kak" class="sec">
+  <div class="wrap">
+    <h2>Как мы работаем</h2>
+    <ol class="steps">
+      <li><b>1</b><h3>Оставьте заявку</h3><p>Или просто приходите. Заявка нужна, чтобы мы приготовили место и мастера.</p></li>
+      <li><b>2</b><h3>Приносите технику</h3><p>Мы работаем с тем, что вы привезли сами. Выезда к вам нет.</p></li>
+      <li><b>3</b><h3>Согласуем цену</h3><p>Мастер смотрит, что сломалось, и называет стоимость по прайсу.</p></li>
+      <li><b>4</b><h3>Чиним и отдаём</h3><p>После ремонта звоним, вы забираете технику и проверяете её на месте.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="kontakty" class="sec sec--tint">
+  <div class="wrap">
+    <h2>Где нас найти</h2>
+    <p class="lead">Приносите технику в мастерскую в часы работы.</p>
+    <div class="cont">
+      <div class="cont__info">
+        <dl>
+          <dt>Адрес</dt><dd>ул. Мастеровая, 12</dd>
+          <dt>Телефон</dt><dd><a href="tel:+70000000000">+7 (000) 000-00-00</a></dd>
+          <dt>Часы работы</dt><dd>Пн-Пт 10:00-19:00<br>Сб 10:00-16:00<br>Вс - выходной</dd>
+        </dl>
+        <a class="btn btn--sm" href="#zayavka">Оставить заявку</a>
+      </div>
+      <figure class="map">
+        <svg viewBox="0 0 440 320" role="img" aria-label="Схема проезда к мастерской">
+          <rect width="440" height="320" fill="#E4EADF"/>
+          <path d="M0 210C90 190 150 250 250 230S390 170 440 190" fill="none" stroke="#B9D3D6" stroke-width="30"/>
+          <g fill="#CFD8C9"><rect x="20" y="20" width="110" height="70" rx="6"/><rect x="150" y="20" width="90" height="70" rx="6"/><rect x="270" y="20" width="150" height="70" rx="6"/><rect x="20" y="110" width="110" height="50" rx="6"/><rect x="270" y="110" width="150" height="50" rx="6"/><rect x="20" y="260" width="140" height="44" rx="6"/><rect x="300" y="260" width="120" height="44" rx="6"/></g>
+          <g stroke="#fff" stroke-linecap="round" fill="none"><path d="M0 100H440" stroke-width="14"/><path d="M140 0V320" stroke-width="14"/><path d="M255 0V320" stroke-width="14"/><path d="M0 170H440" stroke-width="8"/></g>
+          <text x="300" y="104" font-family="Onest,sans-serif" font-size="12" fill="#4F625B" text-anchor="middle">ул. Мастеровая</text>
+          <g transform="translate(255 100)"><path d="M0 0c-14-18-24-28-24-40a24 24 0 0148 0c0 12-10 22-24 40z" transform="translate(0 6)" fill="#D4802F" stroke="#10201B" stroke-width="2.5"/><circle cx="0" cy="-34" r="8" fill="#10201B"/></g>
+        </svg>
+        <figcaption>Схема-образец. В рабочей версии здесь будет карта Яндекса или Google с вашим адресом.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="zayavka" class="sec sec--pcb">
+  <div class="wrap">
+    <h2>Оставить заявку</h2>
+    <p class="lead">Напишите, что сломалось. Мы перезвоним, уточним детали и скажем, когда можно принести технику.</p>
+    <form id="form" class="form" novalidate>
+      <label>Ваше имя
+        <input id="fn" name="name" autocomplete="name" required>
+      </label>
+      <label>Телефон
+        <input id="fp" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7" required>
+      </label>
+      <label>Какая техника
+        <select id="fd" name="device"></select>
+      </label>
+      <label>Что случилось
+        <textarea id="fi" name="issue" rows="3" placeholder="Например: дрель не включается, при нажатии кнопки тишина"></textarea>
+      </label>
+      <label class="hp" aria-hidden="true">Не заполняйте<input id="fh" name="site" tabindex="-1" autocomplete="off"></label>
+      <label class="agree"><input id="fc" type="checkbox"><span>Согласен на обработку моих имени и телефона, чтобы мастерская могла со мной связаться.</span></label>
+      <button class="btn" type="submit" id="send">Отправить заявку</button>
+      <p class="err" id="err" role="alert" hidden></p>
+    </form>
+    <div class="thanks" id="thanks" role="status" hidden></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Мастерская «Контакт». Это демонстрационная версия для заказчика saigai: название, адрес, телефон и цены вымышлены.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
