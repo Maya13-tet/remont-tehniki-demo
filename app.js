@@ -93,7 +93,7 @@ function renderPrice(){
   });
   var n=$('#srcnote');
   n.className='srcnote'+(live?' live':'');
-  n.textContent=stale?'Показаны последние сохранённые цены, обновить не удалось.':'';
+  n.textContent=stale?'Показаны последние сохранённые цены — обновить не удалось.':'';
 }
 
 function renderDevice(){
